@@ -81,9 +81,7 @@ class carritoController {
         
         if( isset($_GET['index']) && isset($_SESSION['carrito'])){
             $indice= (int)$_GET['index'];
-            if($_SESSION['carrito'][$indice]['unidades']<=1){
-                unset($_SESSION['carrito'][$indice]);
-            } else {                
+            if($_SESSION['carrito'][$indice]['unidades']>1){             
                 $_SESSION['carrito'][$indice]['unidades']--;
             }
         }
